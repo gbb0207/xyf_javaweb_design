@@ -1,9 +1,15 @@
+server:
+  port: 8083
+  context-path:
+  tomcat:
+    uri-encoding: utf-8
+
 spring:
   datasource:
     username: root
-    password: 123456
+    password: 12345
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/stuinfosystem?useSSL=false
+    url: jdbc:mysql://localhost/javaweb_design?useSSL=false
     type: com.alibaba.druid.pool.DruidDataSource
     #   数据源其他配置
     initialSize: 5
@@ -16,18 +22,15 @@ spring:
   http:
     encoding:
       charset: UTF-8
+
 mybatis:
   configuration:
     map-underscore-to-camel-case: true
 
-
-server:
-  port: 8083
-  context-path:
-  tomcat:
-    uri-encoding: utf-8
-
 pagehelper:
+  # 指定数据库类型，这里是MySQL
   helperDialect: mysql
+  # 设置是否启用分页参数合理性检查，这里设置为true
   reasonable: true
+  # 设置是否支持方法参数，这里设置为true
   supportMethodsArguments: true
